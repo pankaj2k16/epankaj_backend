@@ -3,11 +3,13 @@ package com.rajlee.student.service;
 import com.rajlee.student.model.Student;
 import com.rajlee.student.repository.StudentRepository;
 import com.rajlee.student.response.StudentResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 public class StudentServiceImpl implements StudentService{
 
@@ -15,6 +17,7 @@ public class StudentServiceImpl implements StudentService{
     StudentRepository studentRepository;
     @Override
     public StudentResponse addStudent(Student student) {
+        log.info("I am from student service");
         StudentResponse sResponse = new StudentResponse();
         try{
             validateStudentInput(student);
