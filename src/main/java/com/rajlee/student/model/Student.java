@@ -1,28 +1,20 @@
 package com.rajlee.student.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
 
 @Data
-public class Student {
+public class Student extends BaseModel{
     @Id
     private String id;
     private String firstName;
     private String lastName;
+    private String email;
+    private String phone;
+    private  Address address;
+    private Gender gender;
+    private String dateOfBirth;
 
-    public Student(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    //    private String email;
-//    private Gender gender;
-//    private Address address;
-//    private List<String> subjects;
-//    private BigDecimal totalSpentInBooks;
-//    private ZonedDateTime created;
-//    private String phone;
 
 }
